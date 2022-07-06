@@ -11,7 +11,7 @@ import RxSwift
 class Service{
 
 
-	func fetchRestaurants() -> Observable<Restaurant>{
+	func fetchRestaurants() -> Observable<Json4Swift_Base>{
 
 
 
@@ -29,8 +29,8 @@ class Service{
 				}
 
 				do {
-
-					let restaurants = try JSONDecoder().decode(Restaurant.self, from: data)
+					
+					let restaurants = try JSONDecoder().decode(Json4Swift_Base.self, from: data)
 					observer.onNext(restaurants)
 
 

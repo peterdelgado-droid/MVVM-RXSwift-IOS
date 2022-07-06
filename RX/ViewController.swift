@@ -29,9 +29,10 @@ class ViewController: UIViewController {
 		let service = Service()
 
 		service.fetchRestaurants().subscribe(onNext: { restaurants in
+			print("hello")
 			print(restaurants)
 
-		}).disposed(by: disposebag)
+		})
 
 
 	}
