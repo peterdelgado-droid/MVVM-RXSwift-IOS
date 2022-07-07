@@ -8,7 +8,18 @@
 import Foundation
 import RxSwift
 
-class Service{
+
+protocol ServiceProtocol{
+
+	func fetchRestaurants()  -> Observable<Json4Swift_Base>
+
+
+}
+
+
+
+
+class Service : ServiceProtocol {
 
 
 	func fetchRestaurants() -> Observable<Json4Swift_Base>{
@@ -17,6 +28,7 @@ class Service{
 
 		return Observable.create { observer -> Disposable in
 
+			
 			let task = URLSession.shared.dataTask(with: URL(string: "https://api.publicapis.org/entries")!)  {
 
 				data, _, _ in
@@ -29,10 +41,14 @@ class Service{
 				}
 
 				do {
-					
-					let restaurants = try JSONDecoder().decode(Json4Swift_Base.self, from: data)
-					observer.onNext(restaurants)
 
+
+
+					let restaurants = try JSONDecoder().decode(Json4Swift_Base.self, from: data)
+
+
+					observer.onNext(restaurants)
+					
 
 				} catch {
 
