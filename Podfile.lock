@@ -1,4 +1,5 @@
 PODS:
+  - Cartography (3.1.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -7,20 +8,23 @@ PODS:
   - RxSwift (6.5.0)
 
 DEPENDENCIES:
+  - Cartography (~> 3.0)
   - RxCocoa
   - RxSwift
 
 SPEC REPOS:
   trunk:
+    - Cartography
     - RxCocoa
     - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
+  Cartography: 1988b7578871a56c036e7af17195cb2190edf18c
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
 
-PODFILE CHECKSUM: 6c2a2713660ef311f37e2a5a74993da16415264a
+PODFILE CHECKSUM: 56d2e53ea384a96c1650d12aa53ffe099e13967d
 
 COCOAPODS: 1.11.3
