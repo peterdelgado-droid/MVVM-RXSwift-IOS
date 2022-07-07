@@ -7,16 +7,20 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
 
+	@IBOutlet weak var tableview: UITableView!
 
 	let disposebag = DisposeBag()
+	private var viewModel : EntriesListViewModel!
 
-	static func instantiate() -> ViewController{
+	static func instantiate(viewModel: EntriesListViewModel) -> ViewController{
 		let storyboard = UIStoryboard(name: "Main", bundle: .main)
 		let viewController = storyboard.instantiateInitialViewController() as!
 		ViewController
+		viewController.viewModel = viewModel
 		return viewController
 
 
@@ -26,13 +30,18 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		let service = Service()
 
-		service.fetchRestaurants().subscribe(onNext: { restaurants in
-			print("hello")
-			print(restaurants)
+		navigationItem.title = viewModel.title
+		navigationController?.navigationBar.prefersLargeTitles = true
 
-		})
+
+		 viewModel.fectchEntriesViewModel().observe(on: MainScheduler.instance).bind(to:tableview.rx.items(cellIdentifier: "cell"))  { index, viewModel, cell in
+			cell.textLabel?.text = viewModel.displayText
+
+		}.disposed(by: disposebag)
+
+
+		//viewModel.o
 
 
 	}
