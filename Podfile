@@ -7,6 +7,7 @@ target 'RX' do
 
 	pod 'RxSwift'
 	pod 'RxCocoa'
+        pod 'Cartography', '~> 3.0'
 
   # Pods for RX
 

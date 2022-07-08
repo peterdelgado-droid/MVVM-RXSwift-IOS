@@ -7,13 +7,16 @@
 import RxSwift
 import RxCocoa
 import Foundation
-class SearchViewModel<T> {
+class SearchViewModel<EntriesViewModel> {
 	// inputs
 	private let searchSubject = PublishSubject<String>()
+
 	var searchObserver: AnyObserver<String> {
 		return searchSubject.asObserver()
 	}
 
+
+	
 	// outputs
 	private let loadingSubject = PublishSubject<Bool>()
 	var isLoading: Driver<Bool> {
@@ -27,14 +30,14 @@ class SearchViewModel<T> {
 			.asDriver(onErrorJustReturn: SearchError.unkowned)
 	}
 
-	private let contentSubject = PublishSubject<[T]>()
-	var content: Driver<[T]> {
+	private let contentSubject = PublishSubject<[EntriesViewModel]>()
+	var content: Driver<[EntriesViewModel]> {
 		return contentSubject
 			.asDriver(onErrorJustReturn: [])
 	}
 
 
-	func search(byTerm term: String) -> Observable<[T]> {
+	func search(byTerm term: String) -> Observable<[EntriesViewModel]> {
 		fatalError("Override this function with your custom implementation")
 	}
 
@@ -52,9 +55,9 @@ class SearchViewModel<T> {
 			.asObservable()
 			.filter { !$0.isEmpty }
 			.distinctUntilChanged()
-			.debounce(0.5, scheduler: MainScheduler.instance)
+			.debounce(.milliseconds(500), scheduler: MainScheduler.instance)
 		// 2
-			.flatMapLatest { [unowned self] term -> Observable<[T]> in
+			.flatMapLatest { [unowned self] term -> Observable<[EntriesViewModel]> in
 				// 3
 				// every new try to search, the error signal will
 				// emit nil to hide the error view
@@ -64,7 +67,7 @@ class SearchViewModel<T> {
 				self.loadingSubject.onNext(true)
 				// 5
 				return self.search(byTerm: term)
-					.catchError { [unowned self] error -> Observable<[T]> in
+					.catch { [unowned self] error -> Observable<[EntriesViewModel]> in
 						self.errorSubject.onNext(SearchError.underlyingError(error))
 						return Observable.empty()
 					}
@@ -83,4 +86,5 @@ class SearchViewModel<T> {
 			.disposed(by: bag)
 
 
+	}
 }
