@@ -25,17 +25,16 @@ final class EntriesListViewModel: SearchViewModel<EntriesViewModel>{
 
 	override func search(byTerm term: String) -> Observable<[EntriesViewModel]> {
 
-		let dogs = fectchEntriesViewModel().observe(on: <#T##ImmediateSchedulerType#>)
+		
+		let dogs = fectchEntriesViewModel()
 
 		let filteredDogs = dogs.filter { $0.first!.displayText == term.lowercased()}
 
 
-
-
-
-
 		return Observable.create({ (observer) -> Disposable in
 			DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+
+
 				observer.onNext(filteredDogs)
 			}
 
@@ -46,8 +45,9 @@ final class EntriesListViewModel: SearchViewModel<EntriesViewModel>{
 
 	func fectchEntriesViewModel() -> Observable<[EntriesViewModel]>{
 
- serviceProto.fetchRestaurants().map { $0.entries!.map {
-			EntriesViewModel(entity: $0)
+    serviceProto.fetchRestaurants().map { $0.entries!.map {
+
+	 EntriesViewModel(entity: $0)
 
 
 		}

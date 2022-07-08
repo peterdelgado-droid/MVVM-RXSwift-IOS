@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 		navigationController?.navigationBar.prefersLargeTitles = true
 
 
-		 viewModel.fectchEntriesViewModel().observe(on: MainScheduler.instance).bind(to:tableview.rx.items(cellIdentifier: "cell"))  { index, viewModel, cell in
+		 viewModel.fectchEntriesViewModel().observe(on: MainScheduler.instance)   .bind(to:tableview.rx.items(cellIdentifier: "cell"))  { index, viewModel, cell in
 			cell.textLabel?.text = viewModel.displayText
 
 		}.disposed(by: disposebag)
