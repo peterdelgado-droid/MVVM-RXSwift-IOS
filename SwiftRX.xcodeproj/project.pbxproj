@@ -27,7 +27,7 @@
 /* Begin PBXFileReference section */
 		30BE81F97547C8FA3719660D /* Pods-RX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RX.debug.xcconfig"; path = "Target Support Files/Pods-RX/Pods-RX.debug.xcconfig"; sourceTree = "<group>"; };
 		8107AE175C85694D8FBF7DCB /* Pods-RX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RX.release.xcconfig"; path = "Target Support Files/Pods-RX/Pods-RX.release.xcconfig"; sourceTree = "<group>"; };
-		821DF998286DF245004A0DC2 /* RX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		821DF998286DF245004A0DC2 /* SwiftRX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		821DF99B286DF245004A0DC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		821DF99D286DF245004A0DC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		821DF99F286DF245004A0DC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +40,6 @@
 		82CC13FF2875BFE900DC842E /* EntriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewModel.swift; sourceTree = "<group>"; };
 		82EBCE642876E495006C1E79 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		82EBCE682876ECDA006C1E79 /* Entries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entries.swift; sourceTree = "<group>"; };
-		82EBCE692876ECDE006C1E79 /* Json4Swift_Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base.swift; sourceTree = "<group>"; };
 		82EBCE6D2876ED37006C1E79 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		82F40E4E28759A4700EC7A8B /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		82F40E502875AAC400EC7A8B /* Entries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entries.swift; path = ../../../Downloads/codegen_62c572e988678/Entries.swift; sourceTree = "<group>"; };
@@ -77,7 +76,7 @@
 		821DF999286DF245004A0DC2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				821DF998286DF245004A0DC2 /* RX.app */,
+				821DF998286DF245004A0DC2 /* SwiftRX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				82EBCE682876ECDA006C1E79 /* Entries.swift */,
-				82EBCE692876ECDE006C1E79 /* Json4Swift_Base.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -154,9 +152,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		821DF997286DF245004A0DC2 /* RX */ = {
+		821DF997286DF245004A0DC2 /* SwiftRX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 821DF9AC286DF245004A0DC2 /* Build configuration list for PBXNativeTarget "RX" */;
+			buildConfigurationList = 821DF9AC286DF245004A0DC2 /* Build configuration list for PBXNativeTarget "SwiftRX" */;
 			buildPhases = (
 				8AC2A3C9ED667460D6E079F9 /* [CP] Check Pods Manifest.lock */,
 				821DF994286DF245004A0DC2 /* Sources */,
@@ -168,9 +166,9 @@
 			);
 			dependencies = (
 			);
-			name = RX;
+			name = SwiftRX;
 			productName = RX;
-			productReference = 821DF998286DF245004A0DC2 /* RX.app */;
+			productReference = 821DF998286DF245004A0DC2 /* SwiftRX.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -188,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 821DF993286DF245004A0DC2 /* Build configuration list for PBXProject "RX" */;
+			buildConfigurationList = 821DF993286DF245004A0DC2 /* Build configuration list for PBXProject "SwiftRX" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -201,7 +199,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				821DF997286DF245004A0DC2 /* RX */,
+				821DF997286DF245004A0DC2 /* SwiftRX */,
 			);
 		};
 /* End PBXProject section */
@@ -477,7 +475,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		821DF993286DF245004A0DC2 /* Build configuration list for PBXProject "RX" */ = {
+		821DF993286DF245004A0DC2 /* Build configuration list for PBXProject "SwiftRX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				821DF9AA286DF245004A0DC2 /* Debug */,
@@ -486,7 +484,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		821DF9AC286DF245004A0DC2 /* Build configuration list for PBXNativeTarget "RX" */ = {
+		821DF9AC286DF245004A0DC2 /* Build configuration list for PBXNativeTarget "SwiftRX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				821DF9AD286DF245004A0DC2 /* Debug */,

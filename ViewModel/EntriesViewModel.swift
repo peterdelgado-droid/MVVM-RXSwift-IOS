@@ -17,7 +17,7 @@ struct EntriesViewModel{
 	}
 
 
-	
+	let title = "Entries"
 
 
 

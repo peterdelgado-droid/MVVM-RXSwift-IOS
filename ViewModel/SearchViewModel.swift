@@ -16,7 +16,7 @@ class SearchViewModel<EntriesViewModel> {
 	}
 
 
-	
+
 	// outputs
 	private let loadingSubject = PublishSubject<Bool>()
 	var isLoading: Driver<Bool> {

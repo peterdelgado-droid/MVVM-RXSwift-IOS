@@ -31,7 +31,7 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 
 
-		navigationItem.title = viewModel.title
+		navigationItem.title = viewModel?.title
 		navigationController?.navigationBar.prefersLargeTitles = true
 
 
@@ -48,4 +48,6 @@ class ViewController: UIViewController {
 
 
 }
+
+
 
